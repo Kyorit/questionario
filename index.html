@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id="container">
+            <main>
+                <h1>Questionário</h1>
+                <form action="/submit" method="POST">
+                    <fieldset>
+                        <legend>Questão 1</legend>
+                        <label for="q1"><h3>Qual o melhor console</h3></label>
+                        <div class="opcao">
+                            <input type="radio" name="q1" id="q1op1" value="playstation5">
+                            <p>Playstation 5</p>
+                            <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q1" id="q1op2" value="xboxSeriesX">
+                            <p>Xbox Series X</p>
+                            <img src="https://cms-assets.xboxservices.com/assets/bc/40/bc40fdf3-85a6-4c36-af92-dca2d36fc7e5.png?n=642227_Hero-Gallery-0_A1_857x676.png" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q1" id="q1op3" value="nintendoSwitch">
+                            <p>Nintendo Switch</p>
+                            <img src="https://cdn.awsli.com.br/2500x2500/1781/1781384/produto/230920986/neon2-w1dc4y3nrh.png" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q1" id="q1op4" value="steamDeck">
+                            <p>Steam Deck</p>
+                            <img src="https://www.amd.com/content/dam/amd/en/images/products/2002975-steam-deck-games-displayed.png" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q1" id="q1op5" value="PC">
+                            <p>PC</p>
+                            <img src="https://static.wixstatic.com/media/1d9c31_f9d3d7bf8fc34e04a1d52fcd7999c742~mv2.png/v1/fill/w_700,h_922,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/1d9c31_f9d3d7bf8fc34e04a1d52fcd7999c742~mv2.png" alt="">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Questão 2</legend>
+                        <label for="q2"><h3>Qual o melhor anime:</h3></label>
+                        <div class="opcao">
+                            <input type="radio" name="q2" id="q2op1" value="FullMetalAlchemist">
+                            <p>Fullmetal Alchemist</p>
+                            <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/ac0052958fa876ed2ef926920a88ec75.jpg" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q2" id="q2op2" value="AttakOnTitan">
+                            <p>Attack On Titan</p>
+                            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C8FFB3F89FAC67F7A79AC915EA8C99189457144512B45C860AC4C8E842ABC9AF/scale?width=1200&amp;aspectRatio=1.78&amp;format=webp" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q2" id="q2op3" value="HunterXHunter">
+                            <p>Hunter x Hunter</p>
+                            <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/2e54344c7cc1675af721b4021222230f.jpg" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q2" id="q2op4" value="DragonBall">
+                            <p>DragonBall</p>
+                            <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/26079ab060401d8a76039e985d63a3e9.jpg" alt="">
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" name="q2" id="q2op5" value="NaoGosto">
+                            <p>Não gosto de animes</p>
+                            <img src="https://cdn-icons-png.flaticon.com/512/655/655272.png" alt="">
+                        </div>
+                    </fieldset>
+                </form>
+            </main>
+        </div>
+        
+        <script src="commands.js"></script>
+    </body>
+</html>
