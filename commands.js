@@ -1,29 +1,39 @@
-document.getElementById("questionario").addEventListener("submit", function(event) {
-    event.preventDefault(); // Impede o envio tradicional do formulário
-    const status = document.getElementById("status");
+$(document).ready(function() {
+    $("#questionario").on("submit", function(event) {
+        event.preventDefault(); // Impede o envio tradicional do formulário
+        
+        const status = $("#status"); // Elemento para mostrar o status de envio
+        
+        // Verificar se todas as questões foram respondidas
+        const q1 = $('input[name="q1"]:checked'); // Pegando a opção marcada da questão 1
+        const q2 = $('input[name="q2"]:checked'); // Pegando a opção marcada da questão 2
 
-    // Pegando as respostas do formulário
-    const q1 = document.querySelector('input[name="q1"]:checked')?.value;
-    const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+        // Verifica se nenhuma opção foi selecionada
+        if (q1.length === 0) {
+            status.text("Por favor, selecione uma resposta para a Questão 1!");
+            return; // Interrompe o envio
+        }
+        if (q2.length === 0) {
+            status.text("Por favor, selecione uma resposta para a Questão 2!");
+            return; // Interrompe o envio
+        }
 
-    if (!q1 || !q2) {
-        status.innerText = "Por favor, responda todas as perguntas!";
-        return;
-    }
+        // Coleta as respostas
+        const respostaQ1 = q1.val();
+        const respostaQ2 = q2.val();
 
-    // Enviando os dados para o Google Sheets via POST
-    fetch("<URL_DO_SEU_GOOGLE_APPS_SCRIPT>", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ q1, q2 })
-    })
-    .then(response => response.text())
-    .then(() => {
-        status.innerText = "Enviado com sucesso!";
-    })
-    .catch(() => {
-        status.innerText = "Erro no envio, tente novamente.";
+        // Enviar os dados para o Google Sheets via POST
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbxecbJPzWGeOUqIg_jGh3QjPV73HsAgo_qPMIXjMt2SvjIGoohxc-nFSxyvBDrLgdbQ/exec",  // Substitua pela URL do seu Web App
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ q1: respostaQ1, q2: respostaQ2 }),
+            success: function(response) {
+                status.text("Enviado com sucesso!");
+            },
+            error: function(error) {
+                status.text("Erro no envio, tente novamente.");
+            }
+        });
     });
 });
