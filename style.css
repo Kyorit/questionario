@@ -1,0 +1,35 @@
+
+
+#container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.opcao{
+    display: flex;
+    align-items: center;
+    transition: ease-in-out .3s;
+    width: 400px;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 5px 20px;
+}
+.opcao:hover{
+    box-shadow: 0px 0px 10px 1px rgb(0, 183, 255);
+    margin-left: 40px;
+}
+.opcao input{
+    margin-right: 10px;
+}
+
+.opcao:has(input:checked){
+    box-shadow: 0px 0px 10px 1px #2fa574;
+    margin-left: 40px;
+}
+.opcao:has(input:checked) input{
+    accent-color: #2fa574
+}
+
+img{
+    height: 100px;
+    margin-left: 40px;
+}
